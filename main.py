@@ -79,11 +79,15 @@ for index, image_name in enumerate(image_files, start=1):
 
     if result.boxes is None or len(result.boxes) == 0:
 
-        print("❌ No Defect Detected")
+        print(f"✅ {image_name} — РАБОЧАЯ (дефектов нет)")
 
         images_without_detection += 1
 
         continue
+
+    else:
+
+        print(f"❌ {image_name} — НЕРАБОЧАЯ ({len(result.boxes)} дефектов)")
 
     print(f"✅ Detections : {len(result.boxes)}")
 
