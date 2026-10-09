@@ -1,3 +1,4 @@
+
 <p align="center">
   <img src="images/banner.png" alt="PCB Defect Detection Banner" width="100%">
 </p>
@@ -247,3 +248,4 @@ The following examples demonstrate the model's ability to identify PCB defects w
 ### Prediction 4
 
 <img src="images/prediction4.jpg" width="700">
+
