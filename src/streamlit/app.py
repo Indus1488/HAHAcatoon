@@ -72,12 +72,7 @@ if css_file.exists():
 
 MODEL_PATH = (
     PROJECT_ROOT
-    / "runs"
-    / "detect"
-    / "runs"
-    / "detect"
-    / "pcb_yolov8_final"
-    / "weights"
+    / "models"
     / "best.pt"
 )
 
