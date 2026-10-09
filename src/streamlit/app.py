@@ -74,7 +74,9 @@ MODEL_PATH = (
     PROJECT_ROOT
     / "runs"
     / "detect"
-    / "train-5"
+    / "runs"
+    / "detect"
+    / "pcb_yolov8_final"
     / "weights"
     / "best.pt"
 )

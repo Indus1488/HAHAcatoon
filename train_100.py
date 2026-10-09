@@ -13,11 +13,11 @@ def main():
     # Train model
     model.train(
         data="datasets/data.yaml",
-        epochs=100,
+        epochs=52,
         imgsz=640,
         batch=8,
         workers=0,
-        device="cpu",
+        device="0",
         optimizer="auto",
         patience=30,
         close_mosaic=10,

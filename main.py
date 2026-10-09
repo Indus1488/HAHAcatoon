@@ -5,7 +5,7 @@ from src.detection.predictor import Predictor
 # Configuration
 # ==========================================
 
-MODEL_PATH = "runs/detect/train-5/weights/best.pt"
+MODEL_PATH = "runs/detect/runs/detect/pcb_yolov8_final/weights/best.pt"
 
 TEST_FOLDER = "datasets/test/images"
 

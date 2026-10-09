@@ -82,7 +82,7 @@ class PCBInspectionPipeline:
         # Process Bounding Boxes
         # ----------------------------------------
 
-        detections = self.processor.process(result)
+        detections = self.processor.process(result, conf_threshold=confidence)
 
         # ----------------------------------------
         # Draw Grid

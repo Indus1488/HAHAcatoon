@@ -5,14 +5,12 @@ from src.config.classes import CLASS_NAMES
 class BoundingBoxProcessor:
 
     def __init__(self):
-
         self.mapper = GridMapper(
             rows=8,
             cols=8
         )
 
-    def process(self, result):
-
+    def process(self, result, conf_threshold=0.25):
         detections = []
 
         if result.boxes is None:
@@ -24,12 +22,15 @@ class BoundingBoxProcessor:
         img_h, img_w = result.orig_shape
 
         for box in result.boxes:
+            conf = float(box.conf[0])
+
+            # === ФИЛЬТРАЦИЯ ПО ПОРОГУ ===
+            if conf < conf_threshold:
+                continue
 
             x1, y1, x2, y2 = box.xyxy[0].tolist()
 
             cls = int(box.cls[0])
-
-            conf = float(box.conf[0])
 
             cx = (x1 + x2) / 2
             cy = (y1 + y2) / 2
@@ -45,18 +46,18 @@ class BoundingBoxProcessor:
 
                 "class_name": CLASS_NAMES[cls],
 
-                "confidence": round(conf,3),
+                "confidence": round(conf, 3),
 
-                "bbox":{
+                "bbox": {
 
-                    "x1":x1,
-                    "y1":y1,
-                    "x2":x2,
-                    "y2":y2
+                    "x1": x1,
+                    "y1": y1,
+                    "x2": x2,
+                    "y2": y2
 
                 },
 
-                "grid":grid
+                "grid": grid
 
             })
 
